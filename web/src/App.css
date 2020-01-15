@@ -1,0 +1,31 @@
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    display: flex;
+}
+
+#app main {
+    margin-left: 20px;
+}
+
+@media (max-width: 1000px) {
+    #app {
+        flex-direction: column;
+    }
+
+    #app main {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    #app aside {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    #app main ul{
+        grid-template-columns: 1fr;
+    }
+}
