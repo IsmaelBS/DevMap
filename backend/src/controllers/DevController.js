@@ -3,9 +3,9 @@ const convertStringToArray = require("../utils/StringToArray");
 const DevModel = require("../models/DevModel");
 
 class DevController {
-  async index() {
+  async index(req,res) {
     const devs = await DevModel.find();
-    return devs;
+    return res.json(devs);
   }
 
   async store(req, res) {
