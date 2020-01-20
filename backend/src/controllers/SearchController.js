@@ -5,7 +5,7 @@ class SearchController {
   async index(req, res) {
     const { latitude, longitude, techs } = req.query;
     const techsArray = parseStringFromArray(techs);
-    
+
     try {
       const devs = await DevModel.find({
         techs: {
@@ -19,17 +19,16 @@ class SearchController {
             },
             $maxDistance: 10000
           }
-        },
+        }
       });
-  
+
       return res.json({ devs });
-    } catch(e) {
+    } catch (e) {
       console.log(e);
     }
 
     return res.json([]);
   }
-  
 }
 
 module.exports = new SearchController();
